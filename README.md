@@ -35,8 +35,9 @@ Expected output:
 Initial setup. The public dataset and AI model are being selected.
 
 ## Team
+
 - Mada Abdulrahman Alghamdi
--Raghad Obaid Alhajri
--Saba Mubarak Alzahrani
+- Raghad Obaid Alhajri
+- Saba Mubarak Alzahrani
 - Mashael Nazih Alnasr
--Noran Deya Almohsin
+- Noran Deya Almohsin
