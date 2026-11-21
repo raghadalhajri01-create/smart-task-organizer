@@ -1,0 +1,12 @@
+{
+  "input_rows": 1200,
+  "invalid_rows_removed": 0,
+  "duplicate_rows_removed": 0,
+  "output_rows": 1200,
+  "reference_actions": 4800,
+  "rows_by_split": {
+    "train": 900,
+    "validation": 150,
+    "test": 150
+  }
+}
