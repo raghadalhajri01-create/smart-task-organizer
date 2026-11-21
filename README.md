@@ -27,6 +27,7 @@ Input:
 Expected output:
 
 | Task | Category | Deadline |
+|---|---|---|
 | Study Chapter 4 | Study | Tomorrow |
 | Buy groceries | Personal | Not specified |
 
