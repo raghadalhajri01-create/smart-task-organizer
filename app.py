@@ -134,7 +134,12 @@ if st.button(
 ):
     try:
         if uploaded_file is not None:
-            note = extract_text_from_file(uploaded_file)
+             file_text = extract_text_from_file(uploaded_file)
+             note = "\n\n".join(
+                part.strip()
+                for part in [note, file_text]
+                if part and part.strip()
+            )
 
         if not note or not note.strip():
             st.warning("Please enter notes or upload a file.")
