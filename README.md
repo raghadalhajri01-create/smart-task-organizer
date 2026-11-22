@@ -41,3 +41,20 @@ Initial setup. The public dataset and AI model are being selected.
 - Saba Mubarak Alzahrani
 - Mashael Nazih Alnasr
 - Noran Deya Almohsin
+
+## AI Model
+
+The project uses the pretrained Qwen2.5 7B model through Ollama.
+
+The AI module (`task_ai.py`) performs three functions:
+- Extracts tasks from English notes.
+- Classifies tasks as Study, Work, or Personal.
+- Extracts deadlines when mentioned; otherwise, returns null.
+
+### AI Setup
+1. Install Ollama: https://ollama.com/download
+2. Download the model:
+   ```bash
+   ollama pull qwen2.5:7b-instruct
+   ```
+3. Make sure Ollama is running before using the application.
