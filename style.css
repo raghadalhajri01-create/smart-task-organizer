@@ -1,0 +1,129 @@
+
+/* ==============================
+   GLOBAL APPLICATION
+============================== */
+
+.stApp {
+    background-color: #E9EDF5;
+}
+
+.block-container {
+    max-width: 1200px;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+/* ==============================
+   PROJECT HEADER
+============================== */
+
+.main-title {
+    font-size: 48px;
+    font-weight: 800;
+    color: #26345C;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.subtitle {
+    font-size: 17px;
+    color: #64748B;
+    margin: 0 0 15px 0;
+}
+
+/* ==============================
+   SECTION HEADINGS
+============================== */
+
+h1, h2, h3 {
+    color: #26345C !important;
+}
+
+h2 {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* ==============================
+   INPUT TEXT AREA
+============================== */
+
+.stTextArea textarea {
+    background-color: #FFFFFF !important;
+    color: #26345C !important;
+    border: 1px solid #D5DCEC !important;
+    border-radius: 10px !important;
+    font-size: 15px !important;
+}
+
+.stTextArea textarea::placeholder {
+    color: #94A3B8 !important;
+    opacity: 1;
+}
+
+.stTextArea label {
+    color: #26345C !important;
+}
+
+/* ==============================
+   FILE UPLOADER
+============================== */
+
+[data-testid="stFileUploader"] {
+    background-color: #FFFFFF;
+    border: 1px dashed #A5A9D6;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.stFileUploader label {
+    color: #26345C !important;
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+
+div.stButton > button {
+    background-color: #6257D9 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    padding: 10px 20px !important;
+}
+
+div.stButton > button:hover {
+    background-color: #4D43B8 !important;
+    color: #FFFFFF !important;
+}
+
+/* ==============================
+   LOADING INDICATOR
+============================== */
+
+.stSpinner > div {
+    color: #26345C !important;
+}
+
+.stSpinner p {
+    color: #26345C !important;
+    font-weight: 600;
+}
+
+/* ==============================
+   SUCCESS AND ERROR MESSAGES
+============================== */
+
+[data-testid="stAlert"] {
+    border-radius: 10px;
+}
+
+/* ==============================
+   GENERAL TEXT
+============================== */
+
+p, label {
+    color: #26345C;
+}
