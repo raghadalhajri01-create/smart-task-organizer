@@ -13,12 +13,15 @@ them takes time and makes deadlines easy to overlook.
 Students and individuals who want to organize their daily tasks.
 
 ## Planned Features
-- Extract tasks from written notes.
-- Classify tasks as Study, Work, or Personal.
+- Enter notes directly into the application.
+- Upload TXT, PDF, DOCX, and CSV files.
+- Extract tasks using the pretrained Qwen2.5 AI model.
+- Classify tasks into Study, Work, and Personal.
 - Extract deadlines when explicitly mentioned.
-- Allow users to review and edit results.
-- Display useful charts.
-- Export tasks as a CSV file.
+- Display extracted tasks in an editable table.
+- Add newly extracted tasks to the existing task list.
+- Edit task names, categories, and deadlines.
+- Clear all tasks when needed.
 
 ## Example
 Input:
@@ -58,3 +61,9 @@ The AI module (`task_ai.py`) performs three functions:
    ollama pull qwen2.5:7b-instruct
    ```
 3. Make sure Ollama is running before using the application.
+4. Run the Application
+
+For macOS: python3 -m streamlit run app.py
+For Windows: python -m streamlit run app.py
+
+The application will open in your browser.
