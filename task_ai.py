@@ -50,6 +50,10 @@ Instructions:
 
 Example note: Complete my math homework by Sunday. Call my sister tonight.
 Example output: {"tasks":[{"task":"Complete my math homework","category":"Study","deadline":"by Sunday"},{"task":"Call my sister","category":"Personal","deadline":"tonight"}]}
+
+Example note: Study Chapter 4 tomorrow. Buy groceries.
+Example output: {"tasks":[{"task":"Study Chapter 4","category":"Study","deadline":"tomorrow"},{"task":"Buy groceries","category":"Personal","deadline":null}]}
+
 """
 
 
