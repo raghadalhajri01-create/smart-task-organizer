@@ -6,6 +6,11 @@ from pypdf import PdfReader
 from docx import Document
 
 from task_ai import extract_tasks
+from analysis import (
+    get_task_summary,
+    get_category_chart_data,
+    export_tasks_to_csv
+)
 from pathlib import Path
 
 #Detect and extract text from uploaded files
@@ -224,5 +229,36 @@ if "tasks" in st.session_state:
 
     st.session_state["tasks"] = edited_tasks
 
+    # Task Analysis
+    st.divider()
+    st.header("📊 Task Analysis")
 
+    # Calculate statistics from the edited tasks
+    summary = get_task_summary(edited_tasks)
+
+    col1, col2, col3, col4, col5 = st.columns(5)
+
+    col1.metric("Total Tasks", summary["total_tasks"])
+    col2.metric("Study", summary["category_counts"]["Study"])
+    col3.metric("Work", summary["category_counts"]["Work"])
+    col4.metric("Personal", summary["category_counts"]["Personal"])
+    col5.metric("Without Deadline", summary["without_deadline"])
+
+    # Category Distribution Chart
+    st.subheader("Task Distribution by Category")
+
+    chart_data = get_category_chart_data(edited_tasks)
+
+    st.bar_chart(chart_data)
+
+    # CSV Export
+    st.subheader("Export Tasks")
+
+    st.download_button(
+        label="📥 Download Tasks as CSV",
+        data=export_tasks_to_csv(edited_tasks),
+        file_name="organized_tasks.csv",
+        mime="text/csv",
+        key="download_tasks_button"
+    )
 
