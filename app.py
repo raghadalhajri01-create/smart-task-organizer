@@ -139,8 +139,8 @@ if st.button(
 ):
     try:
         if uploaded_file is not None:
-             file_text = extract_text_from_file(uploaded_file)
-             note = "\n\n".join(
+            file_text = extract_text_from_file(uploaded_file)
+            note = "\n\n".join(
                 part.strip()
                 for part in [note, file_text]
                 if part and part.strip()
@@ -156,7 +156,6 @@ if st.button(
             with st.spinner("AI is organizing your tasks..."):
                 tasks = extract_tasks(note)
 
-            
             if tasks:
                 # Convert new AI results into a DataFrame
                 new_tasks = pd.DataFrame(tasks)
@@ -164,18 +163,44 @@ if st.button(
                 # Reset editor state before updating the table
                 st.session_state.pop("task_editor", None)
 
-                # Add new tasks to existing tasks
                 if "tasks" in st.session_state:
-                    st.session_state["tasks"] = pd.concat(
+                    # Combine existing tasks with newly extracted tasks
+                    combined_tasks = pd.concat(
                         [st.session_state["tasks"], new_tasks],
                         ignore_index=True
                     )
-                else:
-                    st.session_state["tasks"] = new_tasks
 
-                st.success(
-                    f"Successfully added {len(new_tasks)} new tasks!"
-                )
+                    # Remove duplicate tasks (case-insensitive)
+                    combined_tasks["_task_key"] = (
+                        combined_tasks["task"]
+                        .fillna("")
+                        .astype(str)
+                        .str.strip()
+                        .str.lower()
+                        .str.replace(r"\s+", " ", regex=True)
+                    )
+
+                    combined_tasks = combined_tasks.drop_duplicates(
+                        subset=["_task_key"],
+                        keep="first"
+                    )
+
+                    combined_tasks = combined_tasks.drop(
+                        columns=["_task_key"]
+                    )
+
+                    # Save unique tasks
+                    st.session_state["tasks"] = combined_tasks.reset_index(
+                        drop=True
+                    )
+
+                else:
+                    st.session_state["tasks"] = new_tasks.drop_duplicates(
+                        subset=["task"],
+                        keep="first"
+                    ).reset_index(drop=True)
+
+                st.success("Tasks organized successfully!")
 
             else:
                 st.warning("No tasks were found.")
