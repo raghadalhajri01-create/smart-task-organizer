@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "input": "Study Python tomorrow.",
+    "expected": [
+      {
+        "task": "Study Python",
+        "category": "Study",
+        "deadline": "tomorrow"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "input": "Buy groceries.",
+    "expected": [
+      {
+        "task": "Buy groceries",
+        "category": "Personal",
+        "deadline": null
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "input": "Attend a work meeting on Monday.",
+    "expected": [
+      {
+        "task": "Attend a work meeting",
+        "category": "Work",
+        "deadline": "on Monday"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "input": "The weather is nice today.",
+    "expected": []
+  },
+  {
+    "id": 5,
+    "input": "Finish my assignment by Friday and call my sister tonight.",
+    "expected": [
+      {
+        "task": "Finish my assignment",
+        "category": "Study",
+        "deadline": "by Friday"
+      },
+      {
+        "task": "call my sister",
+        "category": "Personal",
+        "deadline": "tonight"
+      }
+    ]
+  }
+]
