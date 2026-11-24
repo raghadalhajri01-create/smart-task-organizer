@@ -1,26 +1,21 @@
 # AI Usage Report
 
-## Tool
-ChatGPT
+## Tools
+ChatGPT was used during project development.
 
-## Usage So Far
-ChatGPT was used to clarify project requirements,
-suggest an initial work distribution, assist with README
-wording, and provide illustrative task examples.
-
-## Prompts
-Requests focused on project planning, GitHub setup,
-documentation wording, and sample task inputs and outputs.
+## Usage
+AI assistance focused on understanding code errors,
+troubleshooting setup issues, and suggesting corrections.
+It helped investigate missing deadlines and adjust how the
+application combines written notes with uploaded files.
+It also assisted with documentation wording and sample inputs.
 
 ## Verification
-The team will review and adapt the suggestions.
-Completed checks and corrections will be recorded here.
+Suggested changes were reviewed and tested before being
+included in the project. The team checked extracted tasks,
+categories, and deadlines, tested file uploads, and ran the
+data preparation and analysis tests.
 
-## Further Usage
-Each member will record any additional AI assistance,
-including the prompts, outputs used, and how they
-verified or corrected them.
-
-## Independent Work
-Each member's independently completed work will be
-documented as implementation progresses.
+## Responsibility
+The team remains responsible for understanding the code,
+checking the results, and explaining the submitted work.
