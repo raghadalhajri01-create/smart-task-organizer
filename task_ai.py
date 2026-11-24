@@ -40,14 +40,24 @@ Instructions:
 3. Keep the intended action in the task field.
    Put its deadline in the deadline field, not in the task field.
    Do not discard a stated deadline when removing it from the task text.
+   The task field must NEVER contain deadline wording such as "today",
+   "tomorrow", "by Sunday", or "before Thursday".
+   If the original wording is "clean room by Sunday", output task
+   "clean room" and deadline "by Sunday".
+   If the original wording is "study math tomorrow", output task
+   "study math" and deadline "tomorrow".
+   Use a concise, consistent action name. Do not create a second task
+   merely because the same action is repeated with its deadline attached.
 4. Classify each action independently:
    Study for homework, lectures, exams, and coursework.
    Work for professional or business tasks.
    Personal for errands, family, and other personal activities.
    Use only these three categories.
 5. Extract a deadline whenever it is explicitly linked to THAT action.
-   Relative expressions such as "today", "tomorrow", "tonight",
-   and "next week" count as deadlines.
+   Relative expressions and time-of-day phrases such as "today", "tomorrow",
+   "tonight", "at night", "in the evening", "this evening", "in the morning",
+   "at noon", "after lunch", "before bedtime", and "next week" count as
+   deadline/time references and must be stored in the deadline field.
    Preserve the exact deadline phrase, including "before" or "by" if present.
    Keep relative expressions as written; do not convert them to calendar dates.
    Do not copy dates from unrelated background or another task.
@@ -68,6 +78,12 @@ Example output: {"tasks":[{"task":"Study Chapter 4","category":"Study","deadline
 
 Example note: study with mada today.
 Example output: {"tasks":[{"task":"study with mada","category":"Study","deadline":"today"}]}
+
+Example note: read book at night.
+Example output: {"tasks":[{"task":"read book","category":"Personal","deadline":"at night"}]}
+
+Example note: Study math in the evening and exercise in the morning.
+Example output: {"tasks":[{"task":"Study math","category":"Study","deadline":"in the evening"},{"task":"exercise","category":"Personal","deadline":"in the morning"}]}
 
 Example note: The weather is nice today.
 Example output: {"tasks":[]}
