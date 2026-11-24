@@ -1,7 +1,7 @@
 # AI Usage Report
 
 ## Tools
-ChatGPT was used during project development.
+Gemini was used during project development.
 
 ## Usage
 AI assistance focused on understanding code errors,
